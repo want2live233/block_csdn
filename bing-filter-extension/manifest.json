@@ -1,0 +1,20 @@
+{
+  "name": "Bing CSND 过滤器",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "在 cn.bing.com 的搜索结果中自动隐藏所有链接指向 csdn.net 的结果",
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://cn.bing.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://cn.bing.com/search*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
